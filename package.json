@@ -1,0 +1,50 @@
+{
+  "name": "eat-and-go-torii",
+  "version": "1.0.0",
+  "description": "Eat&Go will help you find places to eat on your way to home/work/wherever you'll go.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "develop": "webpack && webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EatAndGoTorii/EatAndGoTorii.git"
+  },
+  "keywords": [
+    "foursquare",
+    "google",
+    "maps",
+    "food",
+    "drink"
+  ],
+  "author": "Miszo Radomski, Rafał Binkiewicz, Maciej Romanowski",
+  "license": "Beerware",
+  "bugs": {
+    "url": "https://github.com/EatAndGoTorii/EatAndGoTorii/issues"
+  },
+  "homepage": "https://github.com/EatAndGoTorii/EatAndGoTorii#readme",
+    "devDependencies": {
+    "angular-mocks": "^1.6.4",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "css-loader": "^0.28.1",
+    "html-loader": "^0.4.5",
+    "jasmine-core": "^2.6.2",
+    "karma": "^1.7.0",
+    "karma-chrome-launcher": "^2.1.1",
+    "karma-eslint": "^2.2.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-webpack": "^2.0.3",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.5",
+    "style-loader": "^0.17.0",
+    "webpack": "^2.5.1",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.3",
+    "angular": "^1.6.4"
+  }
+}
