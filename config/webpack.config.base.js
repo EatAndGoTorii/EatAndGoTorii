@@ -2,13 +2,13 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  context: path.resolve(__dirname, './src'),
+  context: path.resolve(__dirname, '../src'),
   entry: {
     app: './app.module.js',
     vendor: './vendor.js'
   },
   output: {
-    path: path.resolve(__dirname, '../public'),
+    path: path.resolve(__dirname, '../dist'),
     filename: '[name].bundle.js',
     publicPath: '/assets'
   },
@@ -43,9 +43,8 @@ module.exports = {
     ]
   },
 
-  plugins: [],
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ]
 
-  devServer: {
-    contentBase: path.resolve(__dirname, './src')
-  }
 };

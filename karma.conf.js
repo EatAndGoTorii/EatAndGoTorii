@@ -1,5 +1,3 @@
-const webpackConfig = require('./webpack.karma.config');
-
 module.exports = function(config) {
   config.set({
     basePath: '',
@@ -32,7 +30,6 @@ module.exports = function(config) {
     autoWatch: true,
     browsers: ['Chrome'],
     singleRun: false,
-    concurrency: Infinity,
-    webpack: webpackConfig
+    concurrency: Infinity
   });
 };
