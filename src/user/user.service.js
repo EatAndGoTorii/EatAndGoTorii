@@ -16,6 +16,15 @@ class UserService {
     const token = this.authService.loadToken();
     return this.$http.get(`${API_URL}/users/${userId}?oauth_token=${token}&v=20170702`);
   }
+
+  getLoggedUserFavVenues() {
+    return this.getUserFavVenues('self');
+  }
+
+  getUserFavVenues(userId) {
+    const token = this.authService.loadToken();
+    return this.$http.get(`${API_URL}/users/${userId}/venuelikes?oauth_token=${token}&v=20170702`);
+  }
 }
 
 angular

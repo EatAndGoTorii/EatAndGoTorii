@@ -6,11 +6,17 @@
     {{ $ctrl.user.firstName }}
     {{ $ctrl.user.lastName }}
   </div>
-
+  <!--
   <div>
     <code>
       {{ $ctrl.user }}
     </code>
   </div>
+  -->
 
+ lista
+  <ul>
+    <li ng-repeat="favVenue in $ctrl.userFavVenuesList">{{favVenue}}</li>
+  </ul>
+  <!--<user-fav-venues userFavVenuesList="userFavVenuesList"></user-fav-venues>-->
 </div>

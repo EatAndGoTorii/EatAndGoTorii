@@ -3,12 +3,14 @@ class UserCtrl {
     this.userService = userService;
 
     this.user = {};
+    this.userFavVenuesList = [];
   }
 
   $onInit() {
     this.user = this.userService.getLoggedUserData()
       .then(res => { this.user = res.data.response.user; console.log(this.user); });
-
+    this.userService.getLoggedUserFavVenues()
+      .then(res => { this.userFavVenuesList = res.data.response.venues.items; console.log(this.userFavVenuesList) });
   }
 }
 
