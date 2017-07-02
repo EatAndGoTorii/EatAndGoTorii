@@ -37,7 +37,7 @@ class AuthCtrl {
 angular
   .module('authModule')
   .component('authComponent', {
-    selector: 'auth-component',
+    selector: 'auth',
     template: require('./auth.component.html'),
     controller: AuthCtrl
   });
