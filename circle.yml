@@ -1,8 +1,0 @@
-deployment:
-  staging:
-    branch: master
-    heroku:
-      appname: eatandgo-torii
-test:
-  override:
-    - echo "test"
