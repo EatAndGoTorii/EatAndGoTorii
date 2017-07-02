@@ -10,6 +10,10 @@ angular
   .module('app')
   .component('app', {
     selector: 'app',
-    template: require('./app.component.html'),
+    template: require('./app.component.html')
+  })
+  .component('homeComponent', {
+    selector: 'home',
+    template: '<div layout-padding>Home page</div>',
     controller: AppCtrl
   });
