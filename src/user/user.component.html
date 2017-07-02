@@ -1,0 +1,16 @@
+<h1>User Component</h1>
+
+<div>
+  <img ng-src=" {{ $ctrl.user.photo.prefix + '200' + $ctrl.user.photo.suffix }}">
+  <div>
+    {{ $ctrl.user.firstName }}
+    {{ $ctrl.user.lastName }}
+  </div>
+
+  <div>
+    <code>
+      {{ $ctrl.user }}
+    </code>
+  </div>
+
+</div>

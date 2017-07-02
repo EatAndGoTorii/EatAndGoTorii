@@ -9,6 +9,10 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('login', {
       url: '/login',
       component: 'authComponent'
+    })
+    .state('user', {
+      url: '/user',
+      component: 'userComponent'
     });
 
     $urlRouterProvider.otherwise('/');

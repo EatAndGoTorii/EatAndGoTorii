@@ -1,4 +1,4 @@
-import { CLIENT_ID, CLIENT_SECRET, TOKEN_NAME, API_URL} from '../../config/helpers';
+import { CLIENT_ID, CLIENT_SECRET, TOKEN_NAME, AUTH_URL} from '../../config/helpers';
 
 class AuthService {
   constructor($http, $state, $location) {
@@ -31,7 +31,7 @@ class AuthService {
 
   getLoginUrl() {
     const startUrl = this.$location.absUrl();
-    const url = `${API_URL}/authenticate?client_id=${CLIENT_ID}&response_type=token&redirect_uri=${startUrl}`;
+    const url = `${AUTH_URL}?client_id=${CLIENT_ID}&response_type=token&redirect_uri=${startUrl}`;
     return url;
   }
 }
