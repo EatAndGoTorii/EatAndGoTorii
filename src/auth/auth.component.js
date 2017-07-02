@@ -11,9 +11,9 @@ class AuthCtrl {
   }
 
   $onInit() {
-    if(!this.authService.getToken() && !this.authService.loadToken()) {
+    if (!this.authService.getToken() && !this.authService.loadToken()) {
       this.isLogged = false;
-    } else if(this.authService.loadToken()) {
+    } else if (this.authService.loadToken()) {
       this.isLogged = true;
     } else {
       const authToken = this.authService.getToken();

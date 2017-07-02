@@ -46,7 +46,7 @@
     "angular/window-service": 2,
     "angular/timeout-service": 2,
     "angular/no-jquery-angularelement": 2,
-    "angular/log": 2,
+    "angular/log": 0,
     "angular/json-functions": 2,
     "angular/interval-service": 2,
     "angular/foreach": 2,
@@ -108,7 +108,10 @@
       1,
       100
     ],
-    "semi": 0,
+    "semi": [
+      "error",
+      "always"
+    ],
     "no-cond-assign": 0,
     "no-debugger": 0,
     "no-eq-null": 2,
@@ -146,8 +149,8 @@
       }
     ],
     "keyword-spacing": [
-      2,
-      {}
+      "error",
+      { "before": true }
     ],
     "space-infix-ops": 2,
     "space-before-blocks": [

@@ -20,7 +20,7 @@ class AuthService {
   }
 
   saveToken(token) {
-     localStorage.setItem(TOKEN_NAME, token);
+    localStorage.setItem(TOKEN_NAME, token);
   }
 
   logout() {

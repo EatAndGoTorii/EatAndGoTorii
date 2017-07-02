@@ -10,7 +10,10 @@ class UserCtrl {
     this.user = this.userService.getLoggedUserData()
       .then(res => { this.user = res.data.response.user; console.log(this.user); });
     this.userService.getLoggedUserFavVenues()
-      .then(res => { this.userFavVenuesList = res.data.response.venues.items; console.log(this.userFavVenuesList) });
+      .then(res => {
+        this.userFavVenuesList = res.data.response.venues.items;
+        console.log(this.userFavVenuesList);
+      });
   }
 }
 
