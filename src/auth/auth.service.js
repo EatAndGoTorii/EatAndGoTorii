@@ -9,14 +9,23 @@ class AuthService {
   }
 
   loadToken() {
-    const token = localStorage.getItem('access_token');
+    const token = localStorage.getItem(TOKEN_NAME);
     this.authToken = token;
     return this.authToken;
   }
 
+  getToken() {
+    const token = this.$location.hash().split('=')[1];;
+    return token;
+  }
+
+  saveToken(token) {
+     localStorage.setItem(TOKEN_NAME, token);
+  }
+
   logout() {
     this.authToken = null;
-    localStorage.removeItem('access_token');
+    localStorage.removeItem(TOKEN_NAME);
     this.$state.go('login');
   }
 

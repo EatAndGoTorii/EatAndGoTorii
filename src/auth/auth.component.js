@@ -1,12 +1,25 @@
 class AuthCtrl {
-  constructor($state, $window, authService) {
+  constructor($state, $window, $location, authService) {
     this.$state = $state;
     this.$window = $window;
+    this.$location = $location;
     this.authService = authService;
     console.log('Auth Component');
 
     this.authUrl = null;
     this.isLogged = false;
+  }
+
+  $onInit() {
+    if(!this.authService.getToken() && !this.authService.loadToken()) {
+      this.isLogged = false;
+    } else if(this.authService.loadToken()) {
+      this.isLogged = true;
+    } else {
+      const authToken = this.authService.getToken();
+      this.authService.saveToken(authToken);
+      this.isLogged = true;
+    }
   }
 
   login() {
@@ -17,7 +30,7 @@ class AuthCtrl {
 
   logout() {
     this.isLogged = false;
-    console.log('logout');
+    this.authService.logout();
   }
 }
 
