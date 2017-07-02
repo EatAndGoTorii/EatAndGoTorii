@@ -1,4 +1,4 @@
-import { CLIENT_ID, CLIENT_SECRET, TOKEN_NAME, AUTH_URL} from '../../config/helpers';
+import { CLIENT_ID, CLIENT_SECRET, TOKEN_NAME, AUTH_URL } from '../../config/env';
 
 class AuthService {
   constructor($http, $state, $location) {

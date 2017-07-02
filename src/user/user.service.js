@@ -1,4 +1,4 @@
-import { TOKEN_NAME, API_URL} from '../../config/helpers';
+import { TOKEN_NAME, API_URL } from '../../config/env';
 
 class UserService {
   constructor($http, $state, $location, authService) {
