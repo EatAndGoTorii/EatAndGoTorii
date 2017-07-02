@@ -44,7 +44,15 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        CLIENT_ID: JSON.stringify(process.env.CLIENT_ID),
+        CLIENT_SECRET: JSON.stringify(process.env.CLIENT_SECRET),
+        TOKEN_NAME: JSON.stringify(process.env.TOKEN_NAME),
+        GMAPS_KEY: JSON.stringify(process.env.GMAPS_KEY)
+      },
+    })
   ]
 
 };
