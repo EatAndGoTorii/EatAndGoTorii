@@ -1,4 +1,4 @@
-import { CLIENT_ID, CLIENT_SECRET, TOKEN_NAME, API_URL} from '../../config/helpers';
+import { CLIENT_ID, CLIENT_SECRET, TOKEN_NAME, AUTH_URL} from '../../config/helpers';
 
 class AuthService {
   constructor($http, $state, $location) {
@@ -9,20 +9,29 @@ class AuthService {
   }
 
   loadToken() {
-    const token = localStorage.getItem('access_token');
+    const token = localStorage.getItem(TOKEN_NAME);
     this.authToken = token;
     return this.authToken;
   }
 
+  getToken() {
+    const token = this.$location.hash().split('=')[1];;
+    return token;
+  }
+
+  saveToken(token) {
+     localStorage.setItem(TOKEN_NAME, token);
+  }
+
   logout() {
     this.authToken = null;
-    localStorage.removeItem('access_token');
+    localStorage.removeItem(TOKEN_NAME);
     this.$state.go('login');
   }
 
   getLoginUrl() {
     const startUrl = this.$location.absUrl();
-    const url = `${API_URL}/authenticate?client_id=${CLIENT_ID}&response_type=token&redirect_uri=${startUrl}`;
+    const url = `${AUTH_URL}?client_id=${CLIENT_ID}&response_type=token&redirect_uri=${startUrl}`;
     return url;
   }
 }
