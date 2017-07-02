@@ -1,0 +1,6 @@
+<h1>Auth Component!</h1>
+
+<button ng-if="!$ctrl.isLogged"
+        ng-click="$ctrl.login()">Login</button>
+<button ng-if="$ctrl.isLogged"
+        ng-click="$ctrl.logout()">Logout</button>
