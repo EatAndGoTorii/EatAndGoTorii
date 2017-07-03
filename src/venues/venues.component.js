@@ -5,7 +5,7 @@ class VenuesCtrl {
   }
 
   $onInit() {
-    this.venuesService.searchVenues(null, 'Palac kultury')
+    this.venuesService.searchVenues(null, 'Brooklyn bridge')
       .then(res => {
         this.venuesList = res.data.response.venues;
         console.log(this.venuesList);

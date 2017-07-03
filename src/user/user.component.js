@@ -4,6 +4,7 @@ class UserCtrl {
 
     this.user = {};
     this.userFavVenuesList = [];
+    this.userPhotoSize = '200x200';
   }
 
   $onInit() {

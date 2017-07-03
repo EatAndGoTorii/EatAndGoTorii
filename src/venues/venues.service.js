@@ -1,20 +1,23 @@
-import { TOKEN_NAME, API_URL } from '../../config/env';
+import { TOKEN_NAME, API_URL, API_VERSION } from '../../config/env';
 
 class VenuesService {
-  constructor($http, $state, $location, authService) {
-    this.$http = $http;
-    this.$state = $state;
-    this.$location = $location;
+  constructor($http, authService) {
+    this.http = $http;
     this.authService = authService;
   }
 
   searchVenues(ll, near) {
     const token = this.authService.loadToken();
-    if (ll) {
-      return this.$http.get(`${API_URL}/venues/search?ll=${ll}&oauth_token=${token}&v=20170702`);
-    } else if (near) {
-      return this.$http.get(`${API_URL}/venues/search?near=${near}&oauth_token=${token}&v=20170702`);
-    }
+    const url = `${API_URL}/venues/search`;
+    const query = {
+      params: {
+        ll,
+        near,
+        oauth_token: token,
+        v: API_VERSION
+      }
+    };
+    return this.http.get(url, query);
   }
 }
 

@@ -1,7 +1,7 @@
 <h1>User Component</h1>
 
 <div>
-  <img ng-src=" {{ $ctrl.user.photo.prefix + '200' + $ctrl.user.photo.suffix }}">
+  <img ng-src=" {{ $ctrl.user.photo.prefix + $ctrl.userPhotoSize + $ctrl.user.photo.suffix }}">
   <div>
     {{ $ctrl.user.firstName }}
     {{ $ctrl.user.lastName }}
@@ -13,9 +13,5 @@
     </code>
   </div>
 
- lista
-  <ul>
-    <li ng-repeat="favVenue in $ctrl.userFavVenuesList">{{favVenue}}</li>
-  </ul>
-  <!--<user-fav-venues userFavVenuesList="userFavVenuesList"></user-fav-venues>-->
+  <user-fav-venues-component user-fav-venues-list="$ctrl.userFavVenuesList"></user-fav-venues-component>
 </div>

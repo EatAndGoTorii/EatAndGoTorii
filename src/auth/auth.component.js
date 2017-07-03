@@ -11,15 +11,23 @@ class AuthCtrl {
   }
 
   $onInit() {
-    if (!this.authService.getToken() && !this.authService.loadToken()) {
+    if (!this._tokenExists()) {
       this.isLogged = false;
     } else if (this.authService.loadToken()) {
       this.isLogged = true;
     } else {
-      const authToken = this.authService.getToken();
-      this.authService.saveToken(authToken);
-      this.isLogged = true;
+      this._setLoginState();
     }
+  }
+
+  _tokenExists() {
+    return this.authService.getToken() && this.authService.loadToken();
+  }
+
+  _setLoginState() {
+    const authToken = this.authService.getToken();
+    this.authService.saveToken(authToken);
+    this.isLogged = true;
   }
 
   login() {
