@@ -1,5 +1,5 @@
-routesConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
-function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
+routesConfig.$inject = ['$locationProvider', '$stateProvider', '$urlRouterProvider'];
+function routesConfig($locationProvider, $stateProvider, $urlRouterProvider) {
   $locationProvider.html5Mode(true);
   $stateProvider
     .state('home', {
@@ -13,9 +13,13 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('user', {
       url: '/user',
       component: 'userComponent'
+    })
+    .state('venues', {
+      url: '/venues',
+      component: 'venuesComponent'
     });
 
-    $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/');
 
 }
 

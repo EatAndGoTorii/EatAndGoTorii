@@ -1,10 +1,11 @@
 angular
   .module('app',
-  [
-    'ui.router',
-    'authModule',
-    'userModule'
-  ]);
+    [
+      'ui.router',
+      'authModule',
+      'userModule',
+      'venuesModule'
+    ]);
 
 require('./app.component');
 require('./app.routes');

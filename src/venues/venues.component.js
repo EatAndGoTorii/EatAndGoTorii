@@ -1,5 +1,15 @@
 class VenuesCtrl {
-  constructor() {
+  constructor(venuesService) {
+    this.venuesService = venuesService;
+    this.venuesList = [];
+  }
+
+  $onInit() {
+    this.venuesService.searchVenues(null, 'Palac kultury')
+      .then(res => {
+        this.venuesList = res.data.response.venues;
+        console.log(this.venuesList);
+      });
 
   }
 }
