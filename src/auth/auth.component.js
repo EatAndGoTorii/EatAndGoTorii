@@ -11,17 +11,13 @@ class AuthCtrl {
   }
 
   $onInit() {
-    if (!this._tokenExists()) {
+    if (!this.authService.getToken() && !this.authService.loadToken()) {
       this.isLogged = false;
     } else if (this.authService.loadToken()) {
       this.isLogged = true;
     } else {
       this._setLoginState();
     }
-  }
-
-  _tokenExists() {
-    return this.authService.getToken() && this.authService.loadToken();
   }
 
   _setLoginState() {
