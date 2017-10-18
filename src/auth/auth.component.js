@@ -1,8 +1,8 @@
-class AuthCtrl {
+class AuthComponent {
   constructor($state, $window, $location, authService) {
-    this.$state = $state;
-    this.$window = $window;
-    this.$location = $location;
+    this.state = $state;
+    this.window = $window;
+    this.location = $location;
     this.authService = authService;
     console.log('Auth Component');
 
@@ -11,17 +11,13 @@ class AuthCtrl {
   }
 
   $onInit() {
-    if (!this._tokenExists()) {
+    if (!this.authService.getToken() && !this.authService.loadToken()) {
       this.isLogged = false;
     } else if (this.authService.loadToken()) {
       this.isLogged = true;
     } else {
       this._setLoginState();
     }
-  }
-
-  _tokenExists() {
-    return this.authService.getToken() && this.authService.loadToken();
   }
 
   _setLoginState() {
@@ -33,7 +29,7 @@ class AuthCtrl {
   login() {
     this.isLogged = true;
     this.authUrl = this.authService.getLoginUrl();
-    this.$window.location.href = this.authUrl;
+    this.window.location.href = this.authUrl;
   }
 
   logout() {
@@ -44,8 +40,7 @@ class AuthCtrl {
 
 angular
   .module('authModule')
-  .component('authComponent', {
-    selector: 'auth',
+  .component('auth', {
     template: require('./auth.component.html'),
-    controller: AuthCtrl
+    controller: AuthComponent
   });

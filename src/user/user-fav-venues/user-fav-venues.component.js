@@ -1,15 +1,13 @@
-class UserFavVenuesCtrl {
+class UserFavVenuesComponent {
   constructor() {}
 }
 
 angular
   .module('userModule')
-  .component('userFavVenuesComponent', {
-    selector: 'user-fav-venues-component',
+  .component('userFavVenues', {
     template: require('./user-fav-venues.component.html'),
-    binding: {
+    bindings: {
       userFavVenuesList: '<'
     },
-    controller: UserFavVenuesCtrl
+    controller: UserFavVenuesComponent
   });
-

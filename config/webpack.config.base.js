@@ -18,10 +18,12 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: [/node_modules/],
-        use: [{
-          loader: 'babel-loader',
-          options: { presets: ['es2015'] }
-        }]
+        use: [
+          {
+            loader: 'babel-loader',
+            options: { presets: ['es2015'] }
+          }
+        ]
       },
       {
         test: /\.css$/,
@@ -33,12 +35,14 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        use: [{
-          loader: 'html-loader',
-          options: {
-            minimize: true
+        use: [
+          {
+            loader: 'html-loader',
+            options: {
+              minimize: true
+            }
           }
-        }]
+        ]
       }
     ]
   },
@@ -47,10 +51,10 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
-        CLIENT_ID: JSON.stringify(process.env.CLIENT_ID),
-        CLIENT_SECRET: JSON.stringify(process.env.CLIENT_SECRET),
-        TOKEN_NAME: JSON.stringify(process.env.TOKEN_NAME),
-        GMAPS_KEY: JSON.stringify(process.env.GMAPS_KEY)
+        CLIENT_ID: process.env.CLIENT_ID,
+        CLIENT_SECRET: process.env.CLIENT_SECRET,
+        TOKEN_NAME: process.env.TOKEN_NAME,
+        GMAPS_KEY: process.env.GMAPS_KEY
       },
     })
   ]
