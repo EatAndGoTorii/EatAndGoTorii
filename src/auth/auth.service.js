@@ -2,7 +2,7 @@ import { CLIENT_ID, CLIENT_SECRET, TOKEN_NAME, AUTH_URL } from '../../config/env
 
 class AuthService {
   constructor($http, $state, $location) {
-    this.$http = $http;
+    this.http = $http;
     this.state = $state;
     this.location = $location;
     this.authToken = null;
