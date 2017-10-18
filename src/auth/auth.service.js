@@ -3,8 +3,8 @@ import { CLIENT_ID, CLIENT_SECRET, TOKEN_NAME, AUTH_URL } from '../../config/env
 class AuthService {
   constructor($http, $state, $location) {
     this.$http = $http;
-    this.$state = $state;
-    this.$location = $location;
+    this.state = $state;
+    this.location = $location;
     this.authToken = null;
   }
 
@@ -15,7 +15,7 @@ class AuthService {
   }
 
   getToken() {
-    const token = this.$location.hash().split('=')[1];;
+    const token = this.location.hash().split('=')[1];;
     return token;
   }
 
@@ -26,11 +26,11 @@ class AuthService {
   logout() {
     this.authToken = null;
     localStorage.removeItem(TOKEN_NAME);
-    this.$state.go('login');
+    this.state.go('login');
   }
 
   getLoginUrl() {
-    const startUrl = this.$location.absUrl();
+    const startUrl = this.location.absUrl();
     const url = `${AUTH_URL}?client_id=${CLIENT_ID}&response_type=token&redirect_uri=${startUrl}`;
     return url;
   }

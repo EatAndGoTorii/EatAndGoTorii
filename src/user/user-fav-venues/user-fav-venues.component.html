@@ -1,4 +1,6 @@
   <span>Ulubione miejsca</span>
   <ul>
-    <li ng-repeat="favVenueItem in $ctrl.userFavVenuesList">{{ favVenueItem }}</li>
+    <user-fav-venues-item ng-repeat="userFavVenuesItem in $ctrl.userFavVenuesList"
+                          user-fav-venues-item="userFavVenuesItem">
+    </user-fav-venues-item>
   </ul>

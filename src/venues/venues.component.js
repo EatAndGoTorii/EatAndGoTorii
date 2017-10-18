@@ -1,4 +1,4 @@
-class VenuesCtrl {
+class VenuesComponent {
   constructor(venuesService) {
     this.venuesService = venuesService;
     this.venuesList = [];
@@ -8,7 +8,7 @@ class VenuesCtrl {
     this.venuesService.searchVenues(null, 'Brooklyn bridge')
       .then(res => {
         this.venuesList = res.data.response.venues;
-        console.log(this.venuesList);
+        console.log('venuesList: ', this.venuesList);
       });
 
   }
@@ -16,8 +16,7 @@ class VenuesCtrl {
 
 angular
   .module('venuesModule')
-  .component('venuesComponent', {
-    selector: 'venues',
+  .component('venues', {
     template: require('./venues.component.html'),
-    controller: VenuesCtrl
+    controller: VenuesComponent
   });

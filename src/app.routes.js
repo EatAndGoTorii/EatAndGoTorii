@@ -4,19 +4,19 @@ function routesConfig($locationProvider, $stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
       url: '/',
-      component: 'homeComponent'
+      component: 'home'
     })
     .state('login', {
       url: '/login',
-      component: 'authComponent'
+      component: 'auth'
     })
     .state('user', {
       url: '/user',
-      component: 'userComponent'
+      component: 'user'
     })
     .state('venues', {
       url: '/venues',
-      component: 'venuesComponent'
+      component: 'venues'
     });
 
   $urlRouterProvider.otherwise('/');
