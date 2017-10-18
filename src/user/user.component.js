@@ -1,4 +1,4 @@
-class UserCtrl {
+class UserComponent {
   constructor(userService) {
     this.userService = userService;
 
@@ -8,20 +8,22 @@ class UserCtrl {
   }
 
   $onInit() {
-    this.user = this.userService.getLoggedUserData()
-      .then(res => { this.user = res.data.response.user; console.log(this.user); });
+    this.userService.getLoggedUserData()
+      .then((res) => {
+        this.user = res.data.response.user;
+        console.log('user: ', this.user);
+      });
     this.userService.getLoggedUserFavVenues()
-      .then(res => {
+      .then((res) => {
         this.userFavVenuesList = res.data.response.venues.items;
-        console.log(this.userFavVenuesList);
+        console.log('userFavVenuesList: ', this.userFavVenuesList);
       });
   }
 }
 
 angular
   .module('userModule')
-  .component('userComponent', {
-    selector: 'user',
+  .component('user', {
     template: require('./user.component.html'),
-    controller: UserCtrl
+    controller: UserComponent
   });

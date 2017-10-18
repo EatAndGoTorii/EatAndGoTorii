@@ -1,8 +1,8 @@
-class AuthCtrl {
+class AuthComponent {
   constructor($state, $window, $location, authService) {
-    this.$state = $state;
-    this.$window = $window;
-    this.$location = $location;
+    this.state = $state;
+    this.window = $window;
+    this.location = $location;
     this.authService = authService;
     console.log('Auth Component');
 
@@ -29,7 +29,7 @@ class AuthCtrl {
   login() {
     this.isLogged = true;
     this.authUrl = this.authService.getLoginUrl();
-    this.$window.location.href = this.authUrl;
+    this.window.location.href = this.authUrl;
   }
 
   logout() {
@@ -40,8 +40,7 @@ class AuthCtrl {
 
 angular
   .module('authModule')
-  .component('authComponent', {
-    selector: 'auth',
+  .component('auth', {
     template: require('./auth.component.html'),
-    controller: AuthCtrl
+    controller: AuthComponent
   });
