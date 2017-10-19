@@ -5,7 +5,7 @@ class VenuesComponent {
   }
 
   $onInit() {
-    this.venuesService.searchVenues(null, 'Brooklyn bridge')
+    this.venuesService.searchVenues(null, 'Warsaw')
       .then(res => {
         this.venuesList = res.data.response.venues;
         console.log('venuesList: ', this.venuesList);

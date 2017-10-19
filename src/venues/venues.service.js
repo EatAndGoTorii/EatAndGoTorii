@@ -6,14 +6,25 @@ class VenuesService {
     this.authService = authService;
   }
 
+
   searchVenues(ll, near) {
-    const token = this.authService.loadToken();
     const url = `${API_URL}/venues/search`;
     const query = {
       params: {
         ll,
         near,
-        oauth_token: token,
+        oauth_token: this.authService.loadToken(),
+        v: API_VERSION
+      }
+    };
+    return this.http.get(url, query);
+  }
+
+  fetchVenuesDetails(venueId) {
+    const url = `${API_URL}/venues/${venueId}`;
+    const query = {
+      params: {
+        oauth_token: this.authService.loadToken(),
         v: API_VERSION
       }
     };

@@ -6,11 +6,7 @@ class UserService {
     this.authService = authService;
   }
 
-  getLoggedUserData() {
-    return this.getUserData('self');
-  }
-
-  getUserData(userId) {
+  fetchUserData(userId) {
     const token = this.authService.loadToken();
     const url = `${API_URL}/users/${userId}`;
     const query = {
@@ -22,11 +18,7 @@ class UserService {
     return this.http.get(url, query);
   }
 
-  getLoggedUserFavVenues() {
-    return this.getUserFavVenues('self');
-  }
-
-  getUserFavVenues(userId) {
+  fetchUserFavVenues(userId) {
     const token = this.authService.loadToken();
     const url = `${API_URL}/users/${userId}/venuelikes`;
     const query = {

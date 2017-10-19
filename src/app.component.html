@@ -2,10 +2,23 @@
 
 <div>
   <nav>
-    <a ui-sref="home"> home </a>
-    <a ui-sref="login"> login </a>
-    <a ui-sref="user"> user </a>
-    <a ui-sref="venues"> venues </a>
+    <ul>
+      <li>
+        <a ui-sref="home"> home </a>
+      </li>
+      <li>
+        <a ui-sref="login"> login </a>
+      </li>
+      <li>
+        <a ui-sref="user({ userId: 'self' })"> my user </a>
+      </li>
+      <li>
+        <a ui-sref="user({ userId: 1 })"> example user </a>
+      </li>
+      <li>
+        <a ui-sref="venues"> venues </a>
+      </li>
+    </ul>
   </nav>
   <ui-view></ui-view>
 </div>
