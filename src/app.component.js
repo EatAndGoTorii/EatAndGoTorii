@@ -1,9 +1,7 @@
 import './app.component.scss';
 
 class AppComponent {
-  constructor() {
-    console.log('App component is up!');
-  }
+  constructor() {}
 }
 
 angular
@@ -13,6 +11,6 @@ angular
     template: require('./app.component.html')
   })
   .component('home', {
-    template: '<div layout-padding>Home page</div>',
+    template: '<div>Home page</div>',
     controller: AppComponent
   });

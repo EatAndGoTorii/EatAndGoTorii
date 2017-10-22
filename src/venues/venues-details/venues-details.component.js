@@ -1,3 +1,5 @@
+import './venues-details.component.scss';
+
 class VenuesDetailsComponent {
   constructor($stateParams, venuesService) {
     this.stateParams = $stateParams;
@@ -10,7 +12,6 @@ class VenuesDetailsComponent {
     this.venuesService.fetchVenuesDetails(this.stateParams.venueId)
       .then(res => {
         this.venue = res.data.response.venue;
-        console.log('venue: ', this.venue);
       });
 
   }

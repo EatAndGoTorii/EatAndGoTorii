@@ -15,15 +15,15 @@
   <div>Cena: {{ $ctrl.venue.price.tier }}, {{ $ctrl.venue.price.message }}</div>
   <div>
     <span>Tips:</span>
-    <div ng-repeat="group in $ctrl.venue.tips.groups">
+    <div ng-repeat="group in $ctrl.venue.tips.groups"
+         ng-if="group.items.length">
       <span>{{ group.name }} ({{ group.count }})</span>
-      <ul ng-if="group.items.length">
+      <ul>
         <li ng-repeat="item in group.items">
           <strong>{{ item.user.firstName }} {{ item.user.lastName }}:</strong>
           <span>{{ item.text }}</span>
         </li>
       </ul>
-      <em ng-if="!group.items.length">There's no tips from people you follow</em>
     </div>
   </div>
 </div>

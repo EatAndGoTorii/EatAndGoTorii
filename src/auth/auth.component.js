@@ -1,10 +1,11 @@
+import './auth.component.scss';
+
 class AuthComponent {
   constructor($state, $window, $location, authService) {
     this.state = $state;
     this.window = $window;
     this.location = $location;
     this.authService = authService;
-    console.log('Auth Component');
 
     this.authUrl = null;
     this.isLogged = false;

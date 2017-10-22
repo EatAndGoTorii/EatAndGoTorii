@@ -1,17 +1,11 @@
+import './venues.component.scss';
+
 class VenuesComponent {
   constructor(venuesService) {
     this.venuesService = venuesService;
     this.venuesList = [];
   }
 
-  $onInit() {
-    this.venuesService.searchVenues(null, 'Warsaw')
-      .then(res => {
-        this.venuesList = res.data.response.venues;
-        console.log('venuesList: ', this.venuesList);
-      });
-
-  }
 }
 
 angular
