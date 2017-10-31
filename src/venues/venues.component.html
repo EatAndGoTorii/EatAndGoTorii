@@ -1,4 +1,4 @@
 <h1>Venues!</h1>
-<venues-search></venues-search>
-<venues-list ng-if="venuesList.length"
-             venues-list="$ctrl.venuesList"></venues-list>
+<venues-search on-search="$ctrl.searchVenue(ll, searchInput)"></venues-search>
+<venues-list ng-if="$ctrl.venuesSearchResult.length"
+             venues-list="$ctrl.venuesSearchResult"></venues-list>

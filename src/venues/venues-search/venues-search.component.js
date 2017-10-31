@@ -1,23 +1,32 @@
 import './venues-search.component.scss';
 
 class VenuesSearchComponent {
-  constructor(venuesService) {
-    this.venuesService = venuesService;
+  constructor() {
 
-    this.searchInput = 'Warsaw';
+    this.searchInput = '';
   }
 
-  searchVenues() {
-    this.venuesService.searchVenues(null, this.searchInput)
-      .then(res => {
-        return this.venuesList = res.data.response.venues;
-      });
+  $onInit() {
+    let _searchInput = sessionStorage.getItem('searchCriteria');
+
+    if (!!_searchInput) {
+      this.searchInput = _searchInput;
+      this.search();
+    }
   }
+  search() {
+    this.onSearch({ll: null, searchInput: this.searchInput});
+    sessionStorage.setItem('searchCriteria', this.searchInput);
+  }
+
 }
 
 angular
   .module('venuesModule')
   .component('venuesSearch', {
     template: require('./venues-search.component.html'),
-    controller: VenuesSearchComponent
+    controller: VenuesSearchComponent,
+    bindings: {
+      onSearch: '&'
+    }
   });
