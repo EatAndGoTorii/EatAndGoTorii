@@ -4,9 +4,9 @@ class VenuesSearchComponent {
   constructor($sessionStorage) {
     this.sessionStorage = $sessionStorage;
     this.searchCriteria = {
-      ll: null,
+      ll: '',
       near: '',
-      query: 'piwo'
+      query: ''
     };
   }
 
