@@ -1,5 +1,8 @@
 <h1>Venues Search!</h1>
 <input type="text"
-       placeholder="Szukaj"
-       ng-model="$ctrl.searchInput">
+       placeholder="Lokalizacja"
+       ng-model="$ctrl.searchCriteria.near">
+<input type="text"
+       placeholder="Czego szukasz"
+       ng-model="$ctrl.searchCriteria.query">
 <button ng-click="$ctrl.search()">Szukaj</button>

@@ -1,9 +1,13 @@
 import './venues-details.component.scss';
+import { GMAPS_KEY, GMAPS_URL } from '../../../config/env';
 
 class VenuesDetailsComponent {
   constructor($stateParams, venuesService) {
     this.stateParams = $stateParams;
     this.venuesService = venuesService;
+
+    this.googleMapsUrl = GMAPS_URL;
+    this.googleMapsKey = GMAPS_KEY;
 
     this.venue = {};
   }
