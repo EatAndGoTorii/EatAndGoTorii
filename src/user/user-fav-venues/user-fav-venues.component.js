@@ -1,3 +1,5 @@
+import './user-fav-venues.component.scss';
+
 class UserFavVenuesComponent {
   constructor() {}
 }

@@ -1,5 +1,8 @@
+import './user.component.scss';
+
 class UserComponent {
-  constructor(userService) {
+  constructor($stateParams, userService) {
+    this.stateParams = $stateParams;
     this.userService = userService;
 
     this.user = {};
@@ -8,15 +11,13 @@ class UserComponent {
   }
 
   $onInit() {
-    this.userService.getLoggedUserData()
+    this.userService.fetchUserData(this.stateParams.userId)
       .then((res) => {
         this.user = res.data.response.user;
-        console.log('user: ', this.user);
       });
-    this.userService.getLoggedUserFavVenues()
+    this.userService.fetchUserFavVenues(this.stateParams.userId)
       .then((res) => {
         this.userFavVenuesList = res.data.response.venues.items;
-        console.log('userFavVenuesList: ', this.userFavVenuesList);
       });
   }
 }

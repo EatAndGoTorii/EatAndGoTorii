@@ -11,12 +11,16 @@ function routesConfig($locationProvider, $stateProvider, $urlRouterProvider) {
       component: 'auth'
     })
     .state('user', {
-      url: '/user',
+      url: '/user/{userId}',
       component: 'user'
     })
     .state('venues', {
-      url: '/venues',
+      url: '/venues/search',
       component: 'venues'
+    })
+    .state('venuesDetails', {
+      url: '/venues/:venueId',
+      component: 'venuesDetails'
     });
 
   $urlRouterProvider.otherwise('/');

@@ -1,0 +1,31 @@
+<div>
+  <h1>{{ $ctrl.venue.name }}</h1>
+  <a ng-href="{{ $ctrl.venue.canonicalUrl }}" target="_blank">See @foursquare</a>
+
+  <div >Rating: {{ $ctrl.venue.rating }}</div>
+  <div>Address: {{ $ctrl.venue.location.address }}</div>
+  <div>
+    <span>Categories:</span>
+    <ul>
+      <li ng-repeat="category in $ctrl.venue.categories">
+        {{ category.name }}
+      </li>
+    </ul>
+  </div>
+  <div>Cena: {{ $ctrl.venue.price.tier }}, {{ $ctrl.venue.price.message }}</div>
+  <div>
+    <span>Tips:</span>
+    <div ng-repeat="group in $ctrl.venue.tips.groups"
+         ng-if="group.items.length">
+      <span>{{ group.name }} ({{ group.count }})</span>
+      <ul>
+        <li ng-repeat="item in group.items">
+          <strong>{{ item.user.firstName }} {{ item.user.lastName }}:</strong>
+          <span>{{ item.text }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+

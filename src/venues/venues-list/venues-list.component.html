@@ -1,0 +1,4 @@
+<h1>Venues List!</h1>
+<li ng-repeat="venue in $ctrl.venuesList">
+  <a ui-sref="venuesDetails({ venueId: venue.id })">{{ venue.name }}</a>
+</li>

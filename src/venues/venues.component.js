@@ -1,16 +1,17 @@
+import './venues.component.scss';
+
 class VenuesComponent {
   constructor(venuesService) {
     this.venuesService = venuesService;
-    this.venuesList = [];
+    this.venuesSearchResult = [];
   }
 
-  $onInit() {
-    this.venuesService.searchVenues(null, 'Brooklyn bridge')
-      .then(res => {
-        this.venuesList = res.data.response.venues;
-        console.log('venuesList: ', this.venuesList);
-      });
 
+  searchVenue(ll, searchInput) {
+    this.venuesService.searchVenues(ll, searchInput)
+      .then(res => {
+        return this.venuesSearchResult = res.data.response.venues;
+      });
   }
 }
 
