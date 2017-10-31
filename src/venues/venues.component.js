@@ -3,12 +3,13 @@ import './venues.component.scss';
 class VenuesComponent {
   constructor(venuesService) {
     this.venuesService = venuesService;
+
     this.venuesSearchResult = [];
   }
 
 
-  searchVenue(ll, searchInput) {
-    this.venuesService.searchVenues(ll, searchInput)
+  searchVenue(ll, near, query) {
+    this.venuesService.searchVenues(ll, near, query)
       .then(res => {
         return this.venuesSearchResult = res.data.response.venues;
       });

@@ -2,6 +2,8 @@ angular
   .module('app',
     [
       'ui.router',
+      'ngMap',
+      'ngStorage',
       'authModule',
       'userModule',
       'venuesModule'

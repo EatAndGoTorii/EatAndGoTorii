@@ -7,17 +7,18 @@ class VenuesService {
   }
 
 
-  searchVenues(ll, near) {
+  searchVenues(ll, near, query) {
     const url = `${API_URL}/venues/search`;
-    const query = {
+    const queryObj = {
       params: {
         ll,
         near,
+        query,
         oauth_token: this.authService.loadToken(),
         v: API_VERSION
       }
     };
-    return this.http.get(url, query);
+    return this.http.get(url, queryObj);
   }
 
   fetchVenuesDetails(venueId) {

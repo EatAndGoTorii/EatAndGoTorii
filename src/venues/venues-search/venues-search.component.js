@@ -1,22 +1,25 @@
 import './venues-search.component.scss';
 
 class VenuesSearchComponent {
-  constructor() {
-
-    this.searchInput = '';
+  constructor($sessionStorage) {
+    this.sessionStorage = $sessionStorage;
+    this.searchCriteria = {
+      ll: null,
+      near: '',
+      query: 'piwo'
+    };
   }
 
   $onInit() {
-    let _searchInput = sessionStorage.getItem('searchCriteria');
-
-    if (!!_searchInput) {
-      this.searchInput = _searchInput;
+    if (!!this.sessionStorage.searchCriteria) {
+      this.searchCriteria = this.sessionStorage.searchCriteria;
       this.search();
     }
   }
+
   search() {
-    this.onSearch({ll: null, searchInput: this.searchInput});
-    sessionStorage.setItem('searchCriteria', this.searchInput);
+    this.onSearch({ll: null, near: this.searchCriteria.near, query: this.searchCriteria.query});
+    this.sessionStorage.searchCriteria = this.searchCriteria;
   }
 
 }
