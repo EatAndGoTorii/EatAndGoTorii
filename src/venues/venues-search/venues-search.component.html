@@ -1,7 +1,19 @@
-<input type="text"
-       placeholder="Lokalizacja"
-       ng-model="$ctrl.searchCriteria.near">
-<input type="text"
-       placeholder="Czego szukasz"
-       ng-model="$ctrl.searchCriteria.query">
-<button ng-click="$ctrl.search()">Szukaj</button>
+<app-header page-title="'Eat&Go'"></app-header>
+
+<div class="splash">
+  <div class="splash__login">
+      <img src="../../../src/assets/svg/placeholder-white.svg" alt="Logo Eat And Go">
+      <h2>Wyszkukiwanie</h2>
+      <form action="" class="login">
+        <input type="text"
+                placeholder="Lokalizacja"
+                ng-model="$ctrl.searchCriteria.near">
+        <input type="text"
+                placeholder="Czego szukasz"
+                ng-model="$ctrl.searchCriteria.query">
+        <button class="button login__button"
+                ng-click="$ctrl.search()">Szukaj</button>
+      </form>
+  </div>
+</div>
+
