@@ -1,6 +1,7 @@
-  <span>Ulubione miejsca</span>
-  <ul>
-    <li ng-repeat="userFavVenuesItem in $ctrl.userFavVenuesList">
-      <a ui-sref="venuesDetails({ venueId: userFavVenuesItem.id })">{{ userFavVenuesItem.name }}</a>
+<div class="fav">
+  <ul class="fav__list">
+    <li ng-repeat="userFavVenuesItem in $ctrl.userFavVenuesList" ui-sref="venuesDetails({ venueId: userFavVenuesItem.id })">
+      <h3>{{ userFavVenuesItem.name }}</h3>
+      <button>Delete</button>
     </li>
   </ul>

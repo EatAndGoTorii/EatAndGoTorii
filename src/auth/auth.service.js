@@ -30,8 +30,8 @@ class AuthService {
   }
 
   getLoginUrl() {
-    const startUrl = this.location.absUrl();
-    const url = `${AUTH_URL}?client_id=${CLIENT_ID}&response_type=token&redirect_uri=${startUrl}`;
+    const redirectUrl = this.location.absUrl();
+    const url = `${AUTH_URL}?client_id=${CLIENT_ID}&response_type=token&redirect_uri=${redirectUrl}`;
     return url;
   }
 }

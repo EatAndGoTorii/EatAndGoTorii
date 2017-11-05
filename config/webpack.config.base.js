@@ -21,7 +21,7 @@ module.exports = {
         use: [
           {
             loader: 'babel-loader',
-            options: { presets: ['es2015'] }
+            options: { presets: ['env'] }
           }
         ]
       },
@@ -43,6 +43,14 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(jpg|png|jpeg|gif|svg)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]?[hash]',
+          publicPath: 'assets/'
+        }
       }
     ]
   },

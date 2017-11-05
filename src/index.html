@@ -5,16 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600&subset=latin-ext">
     <title>Eat&amp;Go</title>
     <base href="/">
 </head>
 <body>
-
+  <nav>
+    <ul>
+      <li>
+        <a ui-sref="home"> home </a>
+      </li>
+      <li>
+        <a ui-sref="login"> login </a>
+      </li>
+      <li>
+        <a ui-sref="user({ userId: 'self' })"> my user </a>
+      </li>
+      <li>
+        <a ui-sref="user({ userId: 1 })"> example user </a>
+      </li>
+      <li>
+        <a ui-sref="venues"> venues </a>
+      </li>
+    </ul>
+  </nav>
+  <div class="screen">
     <app></app>
+  </div>
 
-    <script src="/assets/commons.js"></script>
-    <script src="/assets/vendor.bundle.js"></script>
-    <script src="/assets/app.bundle.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7kR0e1nz-Fu9vedyCV9K6RRG-aHv_toY&callback=initMap"></script>
+  <script src="/assets/commons.js"></script>
+  <script src="/assets/vendor.bundle.js"></script>
+  <script src="/assets/app.bundle.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7kR0e1nz-Fu9vedyCV9K6RRG-aHv_toY&callback=initMap"></script>
 </body>
 </html>

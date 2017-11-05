@@ -11,6 +11,7 @@ angular
 
 require('./app.component');
 require('./app.routes');
+require('./app-header');
 require('./auth');
 require('./user');
 require('./venues');

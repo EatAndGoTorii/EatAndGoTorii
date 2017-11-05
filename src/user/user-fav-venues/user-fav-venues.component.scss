@@ -1,0 +1,51 @@
+@import '../../assets/css/variables';
+@import '../../assets/css/mixins';
+
+.fav {
+  min-height: 95px;
+  max-height: 285px;
+  margin: 20px auto 0px;
+  overflow: auto;
+  width: 325px;
+  white-space: nowrap;
+
+  .fav__list {
+    li {
+      border-bottom: 1px solid rgba($color-dark, .5);
+      overflow: hidden;
+      padding: 15px 0px;
+      position: relative;
+      cursor: pointer;
+
+      h3 {
+        float: left;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 2px;
+        width: 80%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      p {
+        color: rgba($color-dark, .7);
+        float: left;
+        width: 80%;
+      }
+
+      button {
+        background-image: url(../../assets/svg/garbage.svg);
+        background-repeat: no-repeat;
+        text-indent: -9999em;
+        float: right;
+        padding: 0;
+        position: absolute;
+        top: 11px;
+        right: 10px;
+        height: 20px;
+        width: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+}

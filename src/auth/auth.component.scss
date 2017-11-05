@@ -1,0 +1,71 @@
+@import '../assets/css/variables';
+@import '../assets/css/mixins';
+
+.splash {
+  background-image: url(../assets/img/app_07.jpg);
+
+  .splash__login {
+
+    h2 {
+      color: $color-light;
+    }
+
+    img {
+      width: 40px;
+      margin: 20px 0px 10px;
+    }
+  }
+
+  .login {
+    input {
+      font-size: 1.4rem;
+      text-align: center;
+    }
+
+    .login__button {
+      @include linear-gradient(-45deg, $primary-button-color 0%, $secondary-button-color 100%);
+      @include border-radius(7px);
+      color: $color-light;
+      height: 50px;
+      font-family: $font;
+      font-size: 1.7rem;
+      width: 275px;
+    }
+  }
+}
+
+.info, .social-media {
+  width: calc(100% - 50px);
+  border-bottom: 1px solid rgba($color-dark, .2);
+  font-size: 1.2rem;
+  margin: 0px auto;
+  text-align: center;
+
+  a {
+    display: block;
+    padding: 25px;
+  }
+}
+
+.social-media {
+  border-bottom: none;
+
+  p {
+    padding: 25px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    margin: 0px auto;
+    width: 70%;
+
+    li {
+      display: block;
+      height: 50px;
+      width: 50px;
+    }
+  }
+}

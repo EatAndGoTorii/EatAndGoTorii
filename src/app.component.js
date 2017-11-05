@@ -11,6 +11,6 @@ angular
     template: require('./app.component.html')
   })
   .component('home', {
-    template: '<div>Home page</div>',
+    template: require('./splash.html'),
     controller: AppComponent
   });

@@ -1,0 +1,165 @@
+@import 'assets/css/reset';
+@import 'assets/css/variables';
+@import 'assets/css/mixins';
+
+html {
+  background-color: #e5e5e5;
+  color: $color-dark;
+  font-size: 62.5%;
+}
+
+.txt-left {text-align: left;}
+.txt-center {text-align: center;}
+.txt-right {text-align: right;}
+
+h1 {
+  color: $color-light;
+  font-size: 60px;
+  font-weight: 600;
+}
+
+h2 {
+  color: $color-light;
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+h4 {
+  color: rgba($color-light, .5);
+  font-size: 15px;
+}
+
+a {
+  color: $color-dark;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+.edit {
+  @include linear-gradient(-45deg, $primary-button-color 0%, $secondary-button-color 100%);
+}
+
+.save {
+  @include linear-gradient(-45deg, $primary-color 0%, $secondary-color 100%);
+}
+
+input {
+  @include border-radius(7px);
+  background-color: $color-light;
+  border: 1px solid $color-light;
+  color: $color-dark;
+  height: 30px;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 255px;
+}
+
+.screen {
+  background-color: $color-light;
+  background-image: url(assets/svg/logo_eag_grey.svg);
+  background-position: 155px 60px;
+  background-repeat: no-repeat;
+  background-size: 125%;
+  font-family: $font;
+  height: 667px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  width: 375px;
+  transform: translate(-50%, -50%);
+}
+
+.status-top-bar {
+  display: flex;
+  background-color: $color-light;
+  height: 20px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  font-size: .9rem;
+  font-weight: 400;
+  padding: 0px 25px;
+  position: fixed;
+  line-height: 2rem;
+  width: calc(100% - 50px);
+
+  div {
+    width: 30%;
+  }
+}
+
+
+.splash {
+  @include border-radius(15px);
+  background-color: $primary-color;
+  background-image: url(assets/img/app_03.png);
+  background-size: cover;
+  height: 350px;
+  margin: 65px auto 0;
+  text-align: center;
+  width: 325px;
+
+  .splash__wrapper {
+    left: 50%;
+    position: relative;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    img {
+      width: 25%;
+      margin-bottom: 5px;
+      &[alt] {
+        display: none;
+      }
+    }
+  }
+}
+
+nav {
+  display: flex;
+  margin: 20px 25px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  button {
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+    height: 160px;
+    font-size: 1.5rem;
+    font-family: $font;
+    text-align: center;
+    width: 50%;
+
+    img {
+      background-size: contain;
+      height: 64px;
+      margin: 10px;
+      width: 64px;
+    }
+  }
+}
+
+footer {
+  width: calc(100% - 50px);
+  border-top: 1px solid rgba($color-dark, .2);
+  bottom: 0px;
+  box-sizing: border-box;
+  height: 50px;
+  line-height: 50px;
+  margin: 0 25px;
+  position: fixed;
+  text-align: center;
+
+  p {
+    display: inline-block;
+    font-size: .9rem;
+    line-height: normal;
+    vertical-align: middle;
+  }
+}
