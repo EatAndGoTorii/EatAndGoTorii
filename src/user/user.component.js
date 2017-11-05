@@ -1,9 +1,10 @@
 import './user.component.scss';
 
 class UserComponent {
-  constructor($stateParams, userService) {
+  constructor($stateParams, userService, authService) {
     this.stateParams = $stateParams;
     this.userService = userService;
+    this.authService = authService;
 
     this.user = {};
     this.userFavVenuesList = [];

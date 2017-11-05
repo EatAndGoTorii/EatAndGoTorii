@@ -1,0 +1,106 @@
+@import '../assets/css/variables';
+@import '../assets/css/mixins';
+
+.profile {
+  @include border-radius(15px);
+  background-color: $primary-color;
+  background-image: url(../assets/img/app_03.png);
+  background-size: cover;
+  height: 135px;
+  margin: 30px auto 60px;
+  text-align: center;
+  width: 325px;
+
+  .profile__photo {
+    @include border-radius(75px);
+    background-repeat: no-repeat;
+    background-size: 150px 150px;
+    height: 150px;
+    margin: 0px auto;
+    position: relative;
+    top: 25px;
+    width: 150px;
+  }
+}
+
+.profile-data {
+  margin: 0px auto;
+  text-align: center;
+  width: 325px;
+
+  h2 {
+    color: $color-dark;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: rgba($color-dark, .5);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  button {
+    @include border-radius(7px);
+    color: $color-light;
+    height: 50px;
+    font-family: $font;
+    font-size: 1.75rem;
+    margin: 0px 5px;
+    width: 45%;
+  }
+}
+
+.main-nav {
+  bottom: 0px;
+  color: $color-light;
+  font-size: 1.3rem;
+  height: 60px;
+  position: fixed;
+  width: 325px;
+
+  .main-nav__buttons {
+    @include border-radius(15px);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    width: 100%;
+    vertical-align: middle;
+
+    li {
+      text-align: center;
+      padding: 15px 15px 15px 25px;
+      width: 50%;
+    }
+
+    .main-nav__buttons-near {
+      border-right: 1px solid rgba($color-light, .2);
+      &:before {
+        content: '';
+        background-image: url(../assets/svg/placeholder-white.svg);
+        background-repeat: no-repeat;
+        display: inline-block;
+        height: 20px;
+        position: absolute;
+        top: 19px;
+        left: 20px;
+        width: 30px;
+      }
+    }
+
+    .main-nav__buttons-route {
+      &:before {
+        content: '';
+        background-image: url(../assets/svg/start-and-finish-white.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: inline-block;
+        height: 20px;
+        position: absolute;
+        top: 19px;
+        left: 180px;
+        width: 30px;
+      }
+    }
+  }
+}
