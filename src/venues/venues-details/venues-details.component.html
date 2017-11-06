@@ -1,4 +1,4 @@
-<app-header page-title="'Eat&Go'"></app-header>
+<app-header page-title="'Informacje'"></app-header>
 
 <div class="screen-venue">
   <div class="splash">
@@ -8,46 +8,59 @@
       </div>
   </div>
 
-
   <div class="venue-rating edit">{{ $ctrl.venue.rating }}</div>
 
   <div class="venue-info">
-    <p><span>Address:</span></p>
-    <p>{{ $ctrl.venue.location.city}}, {{ $ctrl.venue.location.address }}</p>
-    <div>
-      <p><span>Categories:</span></p>
-      <ul>
-        <li ng-repeat="category in $ctrl.venue.categories">
-          {{ category.name }}
-        </li>
-      </ul>
+    <div class="venue-info__details">
+      <p><span>Adres:</span></p>
+      <p>{{ $ctrl.venue.location.city}}, {{ $ctrl.venue.location.address }}</p>
+      <div>
+        <p><span>Kategorie:</span></p>
+        <ul>
+          <li ng-repeat="category in $ctrl.venue.categories">
+            {{ category.name }}
+          </li>
+        </ul>
+      </div>
+      <p><span>Cena:</span> {{ $ctrl.venue.price.tier }} / {{ $ctrl.venue.price.message }}</p>
     </div>
-    <p><span>Cena:</span> {{ $ctrl.venue.price.tier }} / {{ $ctrl.venue.price.message }}</p>
-    <div>
-      <p>dodaj do uluionych</p>
+    <div class="add-to-fav">
+      <a href="#">
+        <span class="button save add-fav">
+          <img src="../../assets/svg/star-full.svg" alt="ulubione">
+        </span>
+        <p>Ulubione!</p>
+        <!-- if not fav
+        <span class="button edit add-fav">
+          <img src="../../assets/svg/star.svg" alt="ulubione">
+        </span>
+        <p>Dodaj do ulubionych</p>
+        -->
+      </a>
     </div>
   </div>
 
-  <!--
-  <div>
-    <span>Tips:</span>
-    <div ng-repeat="group in $ctrl.venue.tips.groups"
-         ng-if="group.items.length">
-      <span>{{ group.name }} ({{ group.count }})</span>
-      <ul>
-        <li ng-repeat="item in group.items">
-          <strong>{{ item.user.firstName }} {{ item.user.lastName }}:</strong>
-          <span>{{ item.text }}</span>
-        </li>
-      </ul>
-    </div>
-  </div> -->
-
   <div map-lazy-load="{{ $ctrl.googleMapsUrl }}"
-       map-lazy-load-params="{{ $ctrl.googleMapsUrl }}&?key={{ $ctrl.googleMapsKey }}">
+       map-lazy-load-params="{{ $ctrl.googleMapsUrl }}&?key={{ $ctrl.googleMapsKey }}"
+       class="map">
     <ng-map center="{{ $ctrl.venue.location.lat }}, {{ $ctrl.venue.location.lng }}" zoom="15">
       <marker position="[{{ $ctrl.venue.location.lat }}, {{ $ctrl.venue.location.lng }}]" title="{{ $ctrl.venue.name }}"></marker>
     </ng-map>
   </div>
+
+  <div class="tips">
+    <div ng-repeat="group in $ctrl.venue.tips.groups"
+         ng-if="group.items.length">
+      <h2>Opinie: {{ group.count }} </h2>
+         <!-- <span>{{ group.name }} ({{ group.count }})</span> -->
+      <ul class="tips__list">
+        <li ng-repeat="item in group.items">
+          <p class="tips__list-name">{{ item.user.firstName }} {{ item.user.lastName }}:</p>
+          <p class="tips__list-tip">{{ item.text }}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
 
 </div>
