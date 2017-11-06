@@ -1,17 +1,15 @@
 <app-header page-title="'Profil'"></app-header>
 
-<div class="wrapper">
-  <div class="profile">
-    <!-- profile photo-->
-    <div class="profile__photo" style="background-image: url({{ $ctrl.user.photo.prefix + $ctrl.userPhotoSize + $ctrl.user.photo.suffix }})">
+<div class="profile">
+  <!-- profile photo-->
+  <div class="profile__photo" style="background-image: url({{ $ctrl.user.photo.prefix + $ctrl.userPhotoSize + $ctrl.user.photo.suffix }})">
 
-    </div>
   </div>
-  <!-- profile data / edit -->
-  <div class="profile-data">
-    <h2>{{ $ctrl.user.firstName }} {{ $ctrl.user.lastName }}</h2>
-    <p>{{ $ctrl.user.homeCity }}</p>
-  </div>
-
-  <user-fav-venues user-fav-venues-list="$ctrl.userFavVenuesList"></user-fav-venues>
 </div>
+<!-- profile data / edit -->
+<div class="profile-data">
+  <h2>{{ $ctrl.user.firstName }} {{ $ctrl.user.lastName }}</h2>
+  <p>{{ $ctrl.user.homeCity }}</p>
+</div>
+
+<user-fav-venues user-fav-venues-list="$ctrl.userFavVenuesList"></user-fav-venues>

@@ -10,11 +10,11 @@ header {
   height: 45px;
   justify-content: space-between;
   line-height: 3.1rem;
-  //margin-top: 19px;
   padding: 10px 25px 0;
-  position: fixed;
+  position: sticky;
+  top: 0;
   width: calc(100% - 50px);
-  z-index: 10;
+  z-index: $header-index;
 
   div {
     width: 30%;
