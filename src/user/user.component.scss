@@ -1,13 +1,17 @@
 @import '../assets/css/variables';
 @import '../assets/css/mixins';
 
+.wrapper {
+  overflow: scroll;
+}
+
 .profile {
   @include border-radius(15px);
   background-color: $primary-color;
-  background-image: url(../assets/img/app_03.png);
+  background-image: url('../assets/img/app_03.png');
   background-size: cover;
   height: 135px;
-  margin: 0px auto 60px;
+  margin: 60px auto;
   text-align: center;
   width: 325px;
 
@@ -16,7 +20,7 @@
     background-repeat: no-repeat;
     background-size: 150px 150px;
     height: 150px;
-    margin: 0px auto;
+    margin: 0 auto;
     position: relative;
     top: 25px;
     width: 150px;
@@ -24,7 +28,7 @@
 }
 
 .profile-data {
-  margin: 0px auto;
+  margin: 0 auto;
   text-align: center;
   width: 325px;
 
@@ -42,16 +46,16 @@
   button {
     @include border-radius(7px);
     color: $color-light;
-    height: 50px;
     font-family: $font;
     font-size: 1.75rem;
-    margin: 0px 5px;
+    height: 50px;
+    margin: 0 5px;
     width: 45%;
   }
 }
 
 .main-nav {
-  bottom: 0px;
+  bottom: 0;
   color: $color-light;
   font-size: 1.3rem;
   height: 60px;
@@ -64,41 +68,41 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-around;
-    width: 100%;
     vertical-align: middle;
+    width: 100%;
 
     li {
-      text-align: center;
       padding: 15px 15px 15px 25px;
+      text-align: center;
       width: 50%;
     }
 
     .main-nav__buttons-near {
       border-right: 1px solid rgba($color-light, .2);
-      &:before {
-        content: '';
-        background-image: url(../assets/svg/placeholder-white.svg);
+      &::before {
+        background-image: url('../assets/svg/placeholder-white.svg');
         background-repeat: no-repeat;
+        content: '';
         display: inline-block;
         height: 20px;
+        left: 20px;
         position: absolute;
         top: 19px;
-        left: 20px;
         width: 30px;
       }
     }
 
     .main-nav__buttons-route {
-      &:before {
-        content: '';
-        background-image: url(../assets/svg/start-and-finish-white.svg);
+      &::before {
+        background-image: url('../assets/svg/start-and-finish-white.svg');
         background-repeat: no-repeat;
         background-size: contain;
+        content: '';
         display: inline-block;
         height: 20px;
+        left: 180px;
         position: absolute;
         top: 19px;
-        left: 180px;
         width: 30px;
       }
     }
