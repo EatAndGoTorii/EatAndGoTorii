@@ -1,18 +1,34 @@
-<div>
-  <h1>{{ $ctrl.venue.name }}</h1>
-  <a ng-href="{{ $ctrl.venue.canonicalUrl }}" target="_blank">See @foursquare</a>
+<app-header page-title="'Eat&Go'"></app-header>
 
-  <div >Rating: {{ $ctrl.venue.rating }}</div>
-  <div>Address: {{ $ctrl.venue.location.address }}</div>
-  <div>
-    <span>Categories:</span>
-    <ul>
-      <li ng-repeat="category in $ctrl.venue.categories">
-        {{ category.name }}
-      </li>
-    </ul>
+<div class="screen-venue">
+  <div class="splash">
+      <div class="splash__venue-tedatil">
+          <h2>{{ $ctrl.venue.name }}</h2>
+          <a ng-href="{{ $ctrl.venue.canonicalUrl }}" target="_blank">See @foursquare</a>
+      </div>
   </div>
-  <div>Cena: {{ $ctrl.venue.price.tier }}, {{ $ctrl.venue.price.message }}</div>
+
+
+  <div class="venue-rating edit">{{ $ctrl.venue.rating }}</div>
+
+  <div class="venue-info">
+    <p><span>Address:</span></p>
+    <p>{{ $ctrl.venue.location.city}}, {{ $ctrl.venue.location.address }}</p>
+    <div>
+      <p><span>Categories:</span></p>
+      <ul>
+        <li ng-repeat="category in $ctrl.venue.categories">
+          {{ category.name }}
+        </li>
+      </ul>
+    </div>
+    <p><span>Cena:</span> {{ $ctrl.venue.price.tier }} / {{ $ctrl.venue.price.message }}</p>
+    <div>
+      <p>dodaj do uluionych</p>
+    </div>
+  </div>
+
+  <!--
   <div>
     <span>Tips:</span>
     <div ng-repeat="group in $ctrl.venue.tips.groups"
@@ -25,13 +41,13 @@
         </li>
       </ul>
     </div>
-  </div>
+  </div> -->
+
   <div map-lazy-load="{{ $ctrl.googleMapsUrl }}"
        map-lazy-load-params="{{ $ctrl.googleMapsUrl }}&?key={{ $ctrl.googleMapsKey }}">
     <ng-map center="{{ $ctrl.venue.location.lat }}, {{ $ctrl.venue.location.lng }}" zoom="15">
       <marker position="[{{ $ctrl.venue.location.lat }}, {{ $ctrl.venue.location.lng }}]" title="{{ $ctrl.venue.name }}"></marker>
     </ng-map>
   </div>
+
 </div>
-
-
