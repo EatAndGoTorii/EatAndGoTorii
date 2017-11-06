@@ -1,17 +1,13 @@
 @import '../assets/css/variables';
 @import '../assets/css/mixins';
 
-.wrapper {
-  overflow: scroll;
-}
-
 .profile {
   @include border-radius(15px);
   background-color: $primary-color;
   background-image: url('../assets/img/app_03.png');
   background-size: cover;
   height: 135px;
-  margin: 60px auto;
+  margin: 0 auto 60px;
   text-align: center;
   width: 325px;
 
