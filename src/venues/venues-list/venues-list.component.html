@@ -1,3 +1,11 @@
-<li ng-repeat="venue in $ctrl.venuesList">
-  <a ui-sref="venuesDetails({ venueId: venue.id })">{{ venue.name }}</a>
-</li>
+<div class="venues">
+  <ul class="venues__list">
+    <li ng-repeat="venue in $ctrl.venuesList">
+      <a ui-sref="venuesDetails({ venueId: venue.id })">{{ venue.name }}</a>
+    </li>
+  </ul>
+</div>
+<div class="list-nav">
+  <button class="button edit button-prev">&lt;</button>
+  <button class="button edit button-next">&gt;</button>
+</div>
