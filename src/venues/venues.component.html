@@ -1,3 +1,5 @@
-<venues-search on-search="$ctrl.searchVenue(ll, near, query)"></venues-search>
-<venues-list ng-if="$ctrl.venuesSearchResult.length"
-             venues-list="$ctrl.venuesSearchResult"></venues-list>
+<div class="venues-wrapper">
+  <venues-search on-search="$ctrl.searchVenue(ll, near, query)"></venues-search>
+  <venues-list ng-if="$ctrl.venuesSearchResult.length"
+              venues-list="$ctrl.venuesSearchResult"></venues-list>
+</div>

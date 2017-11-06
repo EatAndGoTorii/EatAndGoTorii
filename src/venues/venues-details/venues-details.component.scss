@@ -28,26 +28,27 @@
         text-decoration: underline;
         word-wrap: break-word;
       }
+
+    }
+
+    .venue-rating {
+      @include border-radius(7px);
+      color: $color-light;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      font-size: 22px;
+      width: 50px;
+      position: absolute;
+      top: 115px;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     img {
       width: 40px;
       margin: 20px 0px 10px;
     }
-  }
-
-  .venue-rating {
-    @include border-radius(7px);
-    color: $color-light;
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
-    font-size: 22px;
-    width: 50px;
-    position: absolute;
-    top: 115px;
-    left: 50%;
-    transform: translateX(-50%);
   }
 
   .venue-info {
@@ -58,7 +59,6 @@
     margin: 40px 0px 25px;
 
     p, li {
-      //color: rgba($color-dark, .5);
       margin: 5px 0px;
 
       span {

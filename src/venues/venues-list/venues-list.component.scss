@@ -6,20 +6,24 @@
   font-weight: 600;
   height: 150px;
   margin: 0 auto;
-  overflow: scroll;
-  overflow-y: hidden;
+  //overflow: scroll;
+  //overflow-y: hidden;
   //overflow-x: hidden;
   position: relative;
   width: 315px;
 
+  &::-webkit-scrollbar {
+    display: none;
+    }
+
   .venues__list {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    flex-direction: column;
 
     li {
       display: inline-block;
       height: 120px;
+      margin-bottom: 25px;
       text-align: center;
       width: 315px;
 
@@ -30,7 +34,7 @@
         color: $primary-color;
         display: block;
         line-height: 120px;
-        padding: 0px 25px;
+        padding: 0 25px;
         width: 315px;
       }
     }
@@ -39,9 +43,9 @@
 }
 
 .list-nav {
-  width: 315px;
   margin: 0 auto;
   position: relative;
+  width: 315px;
 
   button {
     @include border-radius(15px);
@@ -50,8 +54,6 @@
     padding: 20px;
     position: absolute;
     top: -120px;
-    //transform: translatey(-50%);
-    //text-indent: -9999px;
   }
 
   .button-next {
