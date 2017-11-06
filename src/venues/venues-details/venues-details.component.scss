@@ -1,0 +1,68 @@
+@import '../../assets/css/variables';
+@import '../../assets/css/mixins';
+
+.screen-venue {
+  font-size: 14px;
+  margin: 0 auto;
+  width: 315px;
+  position: relative;
+
+  .splash {
+    background-image: url(../../assets/img/app_03.png);
+    background-size: cover;
+    height: auto;
+    margin-bottom: 25px;
+    padding: 50px 0px;
+
+    .splash__venue-tedatil {
+      width: 315px;
+
+      h2 {
+        color: $color-light;
+        margin-bottom: 5px;
+      }
+
+      a {
+        color: $primary-button-color;
+        font-size: 14px;
+        text-decoration: underline;
+        word-wrap: break-word;
+      }
+    }
+
+    img {
+      width: 40px;
+      margin: 20px 0px 10px;
+    }
+  }
+
+  .venue-rating {
+    @include border-radius(7px);
+    color: $color-light;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 22px;
+    width: 50px;
+    position: absolute;
+    top: 115px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .venue-info {
+    font-size: 14px;
+    margin: 40px 0px 25px;
+
+    p, li {
+      color: rgba($color-dark, .5);
+      margin: 5px 0px;
+
+      span {
+        font-weight: 600;
+      }
+    }
+
+  }
+
+}

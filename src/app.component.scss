@@ -54,7 +54,7 @@ input {
   border: 1px solid $color-light;
   color: $color-dark;
   height: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding: 10px;
   width: 255px;
 }
@@ -99,10 +99,10 @@ input {
   background-color: $primary-color;
   background-image: url(assets/img/app_03.png);
   background-size: cover;
-  height: 350px;
-  margin: 65px auto 0;
+  height: 325px;
+  margin: 0px auto ;
   text-align: center;
-  width: 325px;
+  width: 315px;
 
   .splash__wrapper {
     left: 50%;
@@ -113,9 +113,6 @@ input {
     img {
       width: 25%;
       margin-bottom: 5px;
-      &[alt] {
-        display: none;
-      }
     }
   }
 }
@@ -135,7 +132,7 @@ nav {
     font-family: $font;
     text-align: center;
     width: 50%;
-
+    
     img {
       background-size: contain;
       height: 64px;

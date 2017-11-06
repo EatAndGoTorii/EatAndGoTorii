@@ -16,13 +16,13 @@
     }
   }
 
-  .login {
+  .form {
     input {
       font-size: 1.4rem;
       text-align: center;
     }
 
-    .login__button {
+    .form__button {
       @include linear-gradient(-45deg, $primary-button-color 0%, $secondary-button-color 100%);
       @include border-radius(7px);
       color: $color-light;

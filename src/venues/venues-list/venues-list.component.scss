@@ -1,0 +1,59 @@
+@import '../../assets/css/variables';
+@import '../../assets/css/mixins';
+
+.venues {
+  font-size: 18px;
+  font-weight: 600;
+  height: 150px;
+  margin: 0 auto;
+  overflow: auto;
+  overflow-y: hidden;
+  position: relative;
+  width: 315px;
+
+  .venues__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    li {
+      display: inline-block;
+      height: 120px;
+      text-align: center;
+      width: 315px;
+
+      a {
+        @include border-radius(15px);
+        border: 1px solid rgba($color-dark, .2);
+        box-sizing: border-box;
+        color: $primary-color;
+        display: block;
+        line-height: 120px;
+        padding: 0px 25px;
+        width: 315px;
+      }
+    }
+  }
+
+}
+
+.list-nav {
+  width: 315px;
+  margin: 0 auto;
+  position: relative;
+
+  button {
+    @include border-radius(15px);
+    color: $color-light;
+    font-family: $font;
+    padding: 20px;
+    position: absolute;
+    top: -120px;
+    //transform: translatey(-50%);
+    //text-indent: -9999px;
+  }
+
+  .button-next {
+    right: 0;
+  }
+}
