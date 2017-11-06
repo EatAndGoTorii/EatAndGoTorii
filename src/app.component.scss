@@ -113,9 +113,6 @@ input {
     img {
       width: 25%;
       margin-bottom: 5px;
-      &[alt] {
-        //display: none; - ukrywa też sam znacznik img
-      }
     }
   }
 }
@@ -135,7 +132,7 @@ nav {
     font-family: $font;
     text-align: center;
     width: 50%;
-
+    
     img {
       background-size: contain;
       height: 64px;
