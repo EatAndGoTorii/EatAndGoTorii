@@ -9,9 +9,9 @@
   },
   "scripts": {
     "start": "node app.js",
-    "build": "webpack --progress",
+    "build": "NODE_ENV=production webpack -p",
     "develop": "webpack && webpack-dev-server",
-    "heroku-prebuild": "npm install -g express webpack",
+    "heroku-prebuild": "npm install -g express webpack@2.7.0",
     "heroku-postbuild": "npm run build"
   },
   "repository": {
