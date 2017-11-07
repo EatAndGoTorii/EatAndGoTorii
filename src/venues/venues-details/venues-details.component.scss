@@ -5,7 +5,6 @@
   font-size: 12px;
   margin: 0 auto;
   width: 315px;
-  position: relative;
 
   .splash {
     background-image: url(../../assets/img/app_03.png);
@@ -13,6 +12,7 @@
     height: auto;
     margin-bottom: 25px;
     padding: 50px 0px;
+    position: relative;
 
     .splash__venue-tedatil {
       width: 315px;
@@ -40,7 +40,7 @@
       font-size: 22px;
       width: 50px;
       position: absolute;
-      top: 115px;
+      bottom: -20px;
       left: 50%;
       transform: translateX(-50%);
     }

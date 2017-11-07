@@ -19,8 +19,7 @@
 
     li {
       display: inline-block;
-      height: 120px;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       text-align: center;
       width: 315px;
 
@@ -30,8 +29,7 @@
         box-sizing: border-box;
         color: $primary-color;
         display: block;
-        line-height: 120px;
-        padding: 0 25px;
+        padding: 40px 25px;
         width: 315px;
       }
     }
