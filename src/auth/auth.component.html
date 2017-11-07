@@ -1,4 +1,19 @@
-<button ng-if="!$ctrl.isLogged"
-        ng-click="$ctrl.login()">Login</button>
-<button ng-if="$ctrl.isLogged"
-        ng-click="$ctrl.logout()">Logout</button>
+<app-header page-title="'Logowanie'"></app-header>
+
+<div class="splash">
+    <img src="../../src/assets/svg/id-card.svg" alt="Logo Eat And Go">
+    <h2>Logowanie</h2>
+    <button ng-if="!$ctrl.isLogged"
+            ng-click="$ctrl.login()"
+            class="button edit">Zaloguj</button>
+
+    <button ng-if="$ctrl.isLogged"
+            ng-click="$ctrl.logout()"
+            class="button edit">Wyloguj</button>
+    <p>logowanie do aplikacji za pomocą</p>
+    <img src="../../src/assets/svg/foursquare.svg" alt="Logo Eat And Go">
+</div>
+
+<footer>
+    <p>Eat&#38;Go - Torii Academy Project <br> by Radomski, Romanowski, Binkiewicz</p>
+  </footer>

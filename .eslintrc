@@ -104,10 +104,6 @@
       2,
       8
     ],
-    "max-len": [
-      1,
-      100
-    ],
     "semi": [
       "error",
       "always"

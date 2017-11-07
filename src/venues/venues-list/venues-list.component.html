@@ -1,3 +1,16 @@
+<ng-map
+    class="venues__list--maps"
+    center="{{ $ctrl.location.lat }}, {{ $ctrl.location.lng }}"
+    styles="{{ $ctrl.googleMapsStyles() }}"
+    zoom="12">
+    <marker
+      ng-repeat="venue in $ctrl.venuesList"
+      icon="{{ $ctrl.gmapsMarker }}"
+      position="[{{ venue.location.lat }}, {{ venue.location.lng }}]"
+      title="{{ venue.name }}"></marker>
+  </ng-map>
+
+
 <div class="venues">
   <ul class="venues__list">
     <li ng-repeat="venue in $ctrl.venuesList">
