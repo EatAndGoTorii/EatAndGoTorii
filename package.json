@@ -2,12 +2,16 @@
   "name": "eat-and-go-torii",
   "version": "1.0.0",
   "description": "Eat&Go will help you find places to eat on your way to home/work/wherever you'll go.",
-  "main": "index.js",
+  "main": "app.js",
+  "engines": {
+    "node": "8.9.0",
+    "npm": "5.4.2"
+  },
   "scripts": {
-    "start": "node server.js",
-    "build": "webpack --progress",
+    "start": "node app.js",
+    "build": "NODE_ENV=production webpack -p",
     "develop": "webpack && webpack-dev-server",
-    "heroku-prebuild": "npm install -g express http-auth",
+    "heroku-prebuild": "npm install -g express webpack@2.7.0",
     "heroku-postbuild": "npm run build"
   },
   "repository": {
