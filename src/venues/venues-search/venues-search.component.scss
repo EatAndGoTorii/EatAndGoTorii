@@ -14,3 +14,21 @@
     width: 40px;
   }
 }
+
+.form {
+  input {
+    font-size: 1.4rem;
+    font-family: inherit;
+    text-align: center;
+  }
+
+  .form__button {
+    @include linear-gradient(-45deg, $primary-button-color 0%, $secondary-button-color 100%);
+    @include border-radius(7px);
+    color: $color-light;
+    height: 50px;
+    font-family: $font-family;
+    font-size: 1.7rem;
+    width: 275px;
+  }
+}
