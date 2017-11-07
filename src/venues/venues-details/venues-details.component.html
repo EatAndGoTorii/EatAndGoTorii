@@ -24,10 +24,9 @@
       <p><span>Cena:</span> {{ $ctrl.venue.price.tier }} / {{ $ctrl.venue.price.message }}</p>
     </div>
     <div class="add-to-fav">
-      <a href="#">
-        <span class="button save add-fav">
+        <button ng-click="$ctrl.likeVenueHandler($ctrl.venue)" class="button save add-fav">
           <img src="../../assets/svg/star-full.svg" alt="ulubione">
-        </span>
+        </button>
         <p>Ulubione!</p>
         <!-- if not fav
         <span class="button edit add-fav">
@@ -35,7 +34,6 @@
         </span>
         <p>Dodaj do ulubionych</p>
         -->
-      </a>
     </div>
   </div>
 
@@ -43,8 +41,8 @@
        map-lazy-load-params="{{ $ctrl.googleMapsUrl }}&?key={{ $ctrl.googleMapsKey }}"
        class="map">
     <ng-map center="{{ $ctrl.venue.location.lat }}, {{ $ctrl.venue.location.lng }}" zoom="15">
-      <marker position="[{{ $ctrl.venue.location.lat }}, {{ $ctrl.venue.location.lng }}]" title="{{ $ctrl.venue.name }}"></marker>
-    </ng-map>
+    <marker position="[{{ $ctrl.venue.location.lat }}, {{ $ctrl.venue.location.lng }}]" title="{{ $ctrl.venue.name }}"></marker>
+  </ng-map>
   </div>
 
   <div class="tips">
