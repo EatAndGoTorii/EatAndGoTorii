@@ -1,3 +1,11 @@
+<div class="venues__list--maps" map-lazy-load="{{ $ctrl.googleMapsUrl }}"
+     map-lazy-load-params="{{ $ctrl.googleMapsUrl }}&?key={{ $ctrl.googleMapsKey }}"
+     class="map">
+  <ng-map center="{{ $ctrl.location.lat }}, {{ $ctrl.location.lng }}" zoom="12">
+    <marker ng-repeat="venue in $ctrl.venuesList" position="[{{ venue.location.lat }}, {{ venue.location.lng }}]" title="{{ venue.name }}"></marker>
+  </ng-map>
+</div>
+
 <div class="venues">
   <ul class="venues__list">
     <li ng-repeat="venue in $ctrl.venuesList">

@@ -2,7 +2,7 @@ import './venues-details.component.scss';
 import { GMAPS_KEY, GMAPS_URL } from '../../../config/env';
 
 class VenuesDetailsComponent {
-  constructor($stateParams, venuesService) {
+  constructor($stateParams,  venuesService) {
     this.stateParams = $stateParams;
     this.venuesService = venuesService;
 
@@ -14,10 +14,24 @@ class VenuesDetailsComponent {
 
   $onInit() {
     this.venuesService.fetchVenuesDetails(this.stateParams.venueId)
-      .then(res => {
+      .then((res) => {
         this.venue = res.data.response.venue;
       });
 
+  }
+
+  likeVenueHandler(venue) {
+    if (!venue.like) {
+      this.venuesService.addToFavVenues(venue.id)
+        .then((res) => {
+          console.log(res);
+        });
+    } else {
+      this.venuesService.removeFromFavVenues(venue.id)
+        .then((res) => {
+          console.log(res);
+        });
+    }
   }
 }
 

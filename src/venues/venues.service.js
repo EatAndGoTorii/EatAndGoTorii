@@ -31,6 +31,26 @@ class VenuesService {
     };
     return this.http.get(url, query);
   }
+
+  addToFavVenues(venueId) {
+    return this.likeVenue(venueId, 1);
+  }
+
+  removeFromFavVenues(venueId) {
+    return this.likeVenue(venueId, 0);
+  }
+
+  likeVenue(venueId, set) {
+    const url = `${API_URL}/venues/${venueId}/like`;
+    const query = {
+      params: {
+        set,
+        oauth_token: this.authService.loadToken(),
+        v: API_VERSION
+      }
+    };
+    return this.http.post(url, query.params);
+  }
 }
 
 angular
