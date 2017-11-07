@@ -37,13 +37,15 @@
     </div>
   </div>
 
-  <div map-lazy-load="{{ $ctrl.googleMapsUrl }}"
-       map-lazy-load-params="{{ $ctrl.googleMapsUrl }}&?key={{ $ctrl.googleMapsKey }}"
-       class="map">
-    <ng-map center="{{ $ctrl.venue.location.lat }}, {{ $ctrl.venue.location.lng }}" zoom="15">
-    <marker position="[{{ $ctrl.venue.location.lat }}, {{ $ctrl.venue.location.lng }}]" title="{{ $ctrl.venue.name }}"></marker>
+  <ng-map
+    center="{{ $ctrl.venue.location.lat }}, {{ $ctrl.venue.location.lng }}"
+    styles="{{ $ctrl.googleMapsStyles() }}"
+    zoom="15">
+    <marker
+      position="[{{ $ctrl.venue.location.lat }}, {{ $ctrl.venue.location.lng }}]"
+      icon="{{ $ctrl.gmapsMarker }}"
+      title="{{ $ctrl.venue.name }}"></marker>
   </ng-map>
-  </div>
 
   <div class="tips">
     <div ng-repeat="group in $ctrl.venue.tips.groups"

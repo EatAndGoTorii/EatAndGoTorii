@@ -1,13 +1,12 @@
 import './venues-list.component.scss';
-import { GMAPS_KEY, GMAPS_URL } from '../../../config/env';
+import { GMAPS_STYLES, GMAPS_MARKER } from '../../../config/env';
 
 class  VenuesListComponent {
   constructor($sessionStorage, GeoCoder) {
     this.sessionStorage = $sessionStorage;
     this.geoCoder = GeoCoder;
 
-    this.googleMapsUrl = GMAPS_URL;
-    this.googleMapsKey = GMAPS_KEY;
+    this.gmapsMarker = GMAPS_MARKER;
   }
 
   $onInit() {
@@ -19,6 +18,10 @@ class  VenuesListComponent {
           lng: result[0].geometry.location.lng(),
         };
       });
+  }
+
+  googleMapsStyles() {
+    return GMAPS_STYLES;
   }
 }
 
