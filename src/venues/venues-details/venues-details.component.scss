@@ -75,20 +75,23 @@
 
     .add-to-fav {
       width: 115px;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
 
-      span {
+      button {
         @include border-radius(7px);
-        display: block;
+        cursor: pointer;
+        display: flex;
         margin: 0 auto;
         height: 50px;
+        justify-content: center;
         width: 50px;
 
         img {
           width: 26px;
           height: auto;
-          position: relative;
-          top: 10px;
         }
       }
 
