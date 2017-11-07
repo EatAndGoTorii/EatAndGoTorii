@@ -2,10 +2,9 @@
 @import '../../assets/css/mixins';
 
 .screen-venue {
-  font-size: 14px;
+  font-size: 12px;
   margin: 0 auto;
   width: 315px;
-  position: relative;
 
   .splash {
     background-image: url(../../assets/img/app_03.png);
@@ -13,6 +12,7 @@
     height: auto;
     margin-bottom: 25px;
     padding: 50px 0px;
+    position: relative;
 
     .splash__venue-tedatil {
       width: 315px;
@@ -28,6 +28,21 @@
         text-decoration: underline;
         word-wrap: break-word;
       }
+
+    }
+
+    .venue-rating {
+      @include border-radius(7px);
+      color: $color-light;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      font-size: 22px;
+      width: 50px;
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     img {
@@ -36,33 +51,84 @@
     }
   }
 
-  .venue-rating {
-    @include border-radius(7px);
-    color: $color-light;
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
-    font-size: 22px;
-    width: 50px;
-    position: absolute;
-    top: 115px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
   .venue-info {
-    font-size: 14px;
-    margin: 40px 0px 25px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    font-size: 1.2rem;
+    margin: 40px 0 25px;
 
     p, li {
-      color: rgba($color-dark, .5);
-      margin: 5px 0px;
+      margin: 5px 0;
 
       span {
         font-weight: 600;
       }
     }
 
+    .venue-info__details {
+      border-right: 1px solid rgba($color-dark, .2);
+      box-sizing: border-box;
+      padding-right: 20px;
+      width: 200px;
+    }
+
+    .add-to-fav {
+      width: 115px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      button {
+        @include border-radius(7px);
+        cursor: pointer;
+        display: flex;
+        margin: 0 auto;
+        height: 50px;
+        justify-content: center;
+        width: 50px;
+
+        img {
+          width: 26px;
+          height: auto;
+        }
+      }
+
+      p {
+        line-height: 1.6rem;
+      }
+    }
+
+  }
+
+  .map {
+    margin-bottom: 25px;
+  }
+
+  .tips {
+
+    h2 {
+      color: $color-dark;
+      margin-bottom: 25px;
+    }
+
+    .tips__list {
+
+      li {
+        margin-bottom: 20px;
+
+        .tips__list-name{
+          color: $primary-color;
+          font-weight: 600;
+          margin-bottom: 3px;
+        }
+
+        .tips__list-tip {
+          line-height: 16px;
+        }
+      }
+    }
   }
 
 }

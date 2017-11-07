@@ -2,18 +2,19 @@
 @import '../assets/css/mixins';
 
 header {
-  display: flex;
   background-color: $color-light;
+  display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   font-size: 1.4rem;
   height: 45px;
   justify-content: space-between;
   line-height: 3.1rem;
-  margin-top: 19px;
-  padding: 0px 25px;
+  padding: 10px 25px 0;
   position: sticky;
+  top: 0;
   width: calc(100% - 50px);
+  z-index: $header-index;
 
   div {
     width: 30%;
@@ -33,9 +34,9 @@ header {
 
     .profile__link {
       &:after {
-        content: '';
         background-image: url(../assets/svg/user.svg);
         background-repeat: no-repeat;
+        content: '';
         display: inline-block;
         height: 16px;
         margin-left: 8px;
