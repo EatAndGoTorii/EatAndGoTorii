@@ -44,9 +44,8 @@
     <marker
       position="[{{ $ctrl.venue.location.lat }}, {{ $ctrl.venue.location.lng }}]"
       icon="{{ $ctrl.gmapsMarker }}"
-      title="{{ $ctrl.venue.name }}"></marker>
-  </ng-map>
-
+      title="{{ $ctrl.venue.name }}">
+    </marker>
 
   <div class="tips">
     <div ng-repeat="group in $ctrl.venue.tips.groups"
