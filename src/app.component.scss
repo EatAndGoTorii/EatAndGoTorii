@@ -139,18 +139,20 @@ input {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-around;
-  margin: 40px 25px;
+  justify-content: space-between;
+  margin: 35px auto;
   position: relative;
   text-align: center;
   width: 315px;
 
   a {
-    border: 1px solid $primary-color;
+    @include border-radius(15px);
+    border: 2px solid $primary-color;
     display: inline-block;
     font-size: 16px;
-    line-height: 23px;
-    padding: 100px 50px 20px;
+    line-height: 20px;
+    padding: 110px 0 20px;
+    width: 145px;
 
     &::before {
       content: '';
